@@ -27,7 +27,6 @@ async function upgrade() {
   const options = minimist(process.argv.slice(2), { string: 'host', default: '' })
   const pkg = await fs.readJSON('package.json')
   let { version, name } = pkg
-  console.log(version, name)
   if (/^\d+\.\d+\.\d+$/.test(options.host)) {
     version = options.host
   } else {
@@ -42,7 +41,7 @@ async function upgrade() {
 
   async function upgradeFile(url) {
     let text = await fs.readFile(url, "utf8")
-    text = text.replace(new RegExp(`\/${name}@\d+\.\d+\.\d+\/`, "g"), `/${name}@${version}/`)
+    text = text.replace(new RegExp(`\/${name}@\\d+\\.\\d+\\.\\d+\/`, "g"), `/${name}@${version}/`)
     await fs.writeFile(url, text)
   }
 

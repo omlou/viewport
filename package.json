@@ -1,6 +1,6 @@
 {
   "name": "origin",
-  "version": "1.0.3",
+  "version": "1.0.0",
   "main": "./dist/es/origin.min.js",
   "module": "./dist/es/origin.min.js",
   "browser": "./dist/umd/origin.min.js",
