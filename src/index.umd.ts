@@ -1,3 +1,3 @@
-import { print } from "./index"
+import cvp from "./index"
 
-export default print
+export default cvp
