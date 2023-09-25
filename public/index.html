@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>ajax</title>
+  <script src="../dist/umd/ajax.min.js"></script>
+  <script>
+    /* test get url */
+    ajax({
+      url: "http://127.0.0.1:3000/get?id=1"
+    })
+    .then(res => {
+      console.log("get-url", res.response)
+    })
+
+    /* test get params */
+    ajax({
+      url: "http://127.0.0.1:3000/get",
+      params: {
+        id: 1
+      }
+    })
+    .then(res => {
+      console.log("get-params", res.response)
+    })
+
+    /* test get url&params */
+    ajax({
+      url: "http://127.0.0.1:3000/get?id=1",
+      params: {
+        key: "hello"
+      }
+    })
+    .then(res => {
+      console.log("get-url&params", res.response)
+    })
+
+    /* test post params&body */
+    ajax({
+      url: "http://127.0.0.1:3000/post?id=1",
+      method: "post",
+      headers: {
+        "Content-Type": "application/json;charset=UTF-8"
+      },
+      params: {
+        key: "hello"
+      },
+      data: JSON.stringify({name: "Tom"})
+    })
+    .then(res => {
+      console.log("post-params&body", res.response)
+    })
+
+    /* test post data default */
+    ajax({
+      url: "http://127.0.0.1:3000/post",
+      method: "post",
+      data: {name: "Tom"}
+    })
+    .then(res => {
+      console.log("post-data-default", res.response)
+    })
+
+    /* test post data json */
+    ajax({
+      url: "http://127.0.0.1:3000/post",
+      method: "post",
+      headers: {
+        "Content-Type": "application/json;charset=UTF-8"
+      },
+      data: {name: "Tom"}
+    })
+    .then(res => {
+      console.log("post-data-json", res.response)
+    })
+
+    /* test post data urlencoded */
+    ajax({
+      url: "http://127.0.0.1:3000/post",
+      method: "post",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+      },
+      data: {name: "Tom"}
+    })
+    .then(res => {
+      console.log("post-data-urlencoded", res.response)
+    })
+
+    /* test post body urlencoded */
+    ajax({
+      url: "http://127.0.0.1:3000/post",
+      method: "post",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+      },
+      data: ajax.queryString({ name: "Tom" })
+    })
+    .then(res => {
+      console.log("post-body-urlencoded", res.response)
+    })
+    
+    /* test post body formdata */
+    const formData = new FormData()
+    formData.append("name", "Tom")
+    ajax({
+      url: "http://127.0.0.1:3000/post",
+      method: "post",
+      data: formData
+    })
+    .then(res => {
+      console.log("post-body-formdata", res.response)
+    })
+    
+    /* test post status 500 */
+    ajax({
+      url: "http://127.0.0.1:3000/wrong",
+      method: "post",
+      data: {
+        name: "Tom"
+      }
+    })
+    .then(res => {
+      console.log("post-500-res", res.response)
+    })
+    .catch(exc => {
+      console.log("post-500-exc", exc)
+    })
+    
+    /* test post status 404 */
+    ajax({
+      url: "http://127.0.0.1:3000/none",
+      method: "post",
+      data: {
+        name: "Tom"
+      }
+    })
+    .then(res => {
+      console.log("post-404-res", res.response)
+    })
+    .catch(exc => {
+      console.log("post-404-exc", exc)
+    })
+    
+    /* test post error */
+    ajax({
+      url: "http://127.0.0.1:3000/post",
+      method: "post",
+      headers: {
+        "Content-Type": "multipart/form-data"
+      },
+      data: {
+        name: "Tom"
+      }
+    })
+    .then(res => {
+      console.log("post-error-res", res.response)
+    })
+    .catch(exc => {
+      console.log("post-error-exc", exc)
+    })
+  </script>
+</head>
+<body>
+</body>
+</html>
