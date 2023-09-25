@@ -1,22 +1,22 @@
 {
-  "name": "origin",
+  "name": "viewport",
   "version": "1.0.0",
-  "main": "./dist/es/origin.min.js",
-  "module": "./dist/es/origin.min.js",
-  "browser": "./dist/umd/origin.min.js",
+  "main": "./dist/es/viewport.min.js",
+  "module": "./dist/es/viewport.min.js",
+  "browser": "./dist/umd/viewport.min.js",
   "exports": {
     ".": {
       "types": "./index.d.ts",
-      "require": "./dist/umd/origin.min.js",
-      "default": "./dist/es/origin.min.js"
+      "require": "./dist/umd/viewport.min.js",
+      "default": "./dist/es/viewport.min.js"
     },
     "./es": {
       "types": "./index.d.ts",
-      "default": "./dist/es/origin.min.js"
+      "default": "./dist/es/viewport.min.js"
     },
     "./umd": {
       "types": "./index.d.ts",
-      "default": "./dist/umd/origin.min.js"
+      "default": "./dist/umd/viewport.min.js"
     }
   },
   "type": "module",
@@ -28,10 +28,10 @@
   "description": "Rollup project template.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/omlou/origin.git"
+    "url": "https://github.com/omlou/viewport.git"
   },
-  "unpkg": "dist/umd/origin.min.js",
-  "jsdelivr": "dist/umd/origin.min.js",
+  "unpkg": "dist/umd/viewport.min.js",
+  "jsdelivr": "dist/umd/viewport.min.js",
   "scripts": {
     "build": "gulp clear && rollup -c",
     "start": "gulp serve",

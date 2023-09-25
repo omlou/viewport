@@ -5,8 +5,8 @@ import commonjs from '@rollup/plugin-commonjs'
 import json from "@rollup/plugin-json"
 import dts from 'rollup-plugin-dts'
 
-const name = "origin"
-const globalName = "origin"
+const name = "viewport"
+const globalName = "viewport"
 const commonPlugins = [
   resolve(),
   commonjs(),
