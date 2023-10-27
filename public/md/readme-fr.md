@@ -25,7 +25,7 @@
 <!-- Il est recommandé de télécharger le fichier localement et de l'utiliser. -->
 <script>
   /* Après avoir inclus ce fichier JS, l'objet viewport sera disponible dans la fenêtre */
-  cvp.init({/* options */})
+  vp.init({/* options */})
 </script>
 ```
 
@@ -41,16 +41,16 @@ Dans main.js ou main.ts
 
 ```javascript
 /* Utilisation du package entier */
-import cvp from '@xlou/viewport'
+import vp from '@xlou/viewport'
 
-/* Configuration recommandée pour mobile (maquette de conception de 375px, 750px est identique) */
-cvp.init({
-  width: 375,
+/* Configuration recommandée pour mobile */
+vp.init({
+  width: 375, // Le projet de conception ici est de 375px, et s'il s'agit de 750px, alors réglez-le à 750.
   fontSize: '0.14rem'
 })
 
 /* Configuration recommandée pour PC (maquette de conception de 1920px)  */
-cvp.init({
+vp.init({
   width: 1920,
   metaViewport: false,
   fontSize: '0.14rem'
@@ -59,7 +59,7 @@ cvp.init({
 
 ### API
 
-#### cvp
+#### vp
 
 |Clé|Type|Description|
 |----|----|----|
@@ -84,7 +84,7 @@ interface StoreOptions {
     rootSize: string;
   };
 }
-const cvp: {
+const vp: {
   init(options: Options): void;
   readonly info: StoreOptions;
 }
@@ -116,4 +116,4 @@ docInfo:
 
 * rootSize: chaîne de caractères, retourne la taille de police de la racine
 
-options: objet, retourne les options de "cvp" de cette page
+options: objet, retourne les options de "vp" de cette page

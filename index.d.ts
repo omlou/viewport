@@ -15,7 +15,7 @@ interface StoreOptions {
         rootSize: string;
     };
 }
-declare function init(options: Options): void;
+declare function init(options?: Options): void;
 declare const _default: {
     init: typeof init;
     readonly info: StoreOptions;

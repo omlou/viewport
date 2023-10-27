@@ -21,7 +21,7 @@ const store: any = {
   docInfo: {}
 }
 
-function init(options: Options): void {
+function init(options: Options = {}): void {
   if (!window) {
     console.warn('viewport startup time is incorrect.')
     return

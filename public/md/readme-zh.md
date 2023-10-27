@@ -25,7 +25,7 @@
 <!-- 建议下载并在本地使用文件 -->
 <script>
   /* 包含此JS文件后，viewport对象将在window上可用 */
-  cvp.init({/* 选项 */})
+  vp.init({/* 选项 */})
 </script>
 ```
 
@@ -41,16 +41,16 @@ npm i @xlou/viewport -S
 
 ``` javascript
 /* 使用整个包 */
-import cvp from '@xlou/viewport'
+import vp from '@xlou/viewport'
 
-/* 推荐的移动端配置（设计稿宽度为375px，750px也相同） */
-cvp.init({
-  width: 375,
+/* 推荐的移动端配置 */
+vp.init({
+  width: 375, // 这里设计稿为 375px ，如果是 750px 的话这里就设置 750
   fontSize: '0.14rem'
 })
 
 /* 推荐的PC配置（设计稿宽度为1920px）  */
-cvp.init({
+vp.init({
   width: 1920,
   metaViewport: false,
   fontSize: '0.14rem'
@@ -59,7 +59,7 @@ cvp.init({
 
 ### API
 
-#### cvp
+#### vp
 
 |键|类型|描述|
 |----|----|----|
@@ -84,7 +84,7 @@ interface StoreOptions {
     rootSize: string;
   };
 }
-const cvp: {
+const vp: {
   init(options: Options): void;
   readonly info: StoreOptions;
 }
@@ -116,4 +116,4 @@ docInfo:
 
 * rootSize: 字符串，返回根的字体大小
 
-options: 对象，返回此页面的"cvp"参数
+options: 对象，返回此页面的"vp"参数

@@ -25,7 +25,7 @@
 <!-- 파일을 로컬로 다운로드하고 사용하는 것을 권장합니다. -->
 <script>
   /* 이 JS 파일을 포함한 후에 viewport 객체는 window에서 사용 가능합니다. */
-  cvp.init({/* 옵션 */})
+  vp.init({/* 옵션 */})
 </script>
 ```
 
@@ -41,16 +41,16 @@ main.js 또는 main.ts에서
 
 ``` javascript
 /* 패키지 전체를 사용 */
-import cvp from '@xlou/viewport'
+import vp from '@xlou/viewport'
 
-/* 모바일에서 권장되는 설정 (디자인 초안이 375px이면, 750px도 동일) */
-cvp.init({
-  width: 375,
+/* 모바일에서 권장되는 설정 */
+vp.init({
+  width: 375, // 여기 디자인 초안은 375px이고, 750px이면 750으로 설정하십시오.
   fontSize: '0.14rem'
 })
 
 /* PC에서 권장되는 설정 (디자인 초안이 1920px)  */
-cvp.init({
+vp.init({
   width: 1920,
   metaViewport: false,
   fontSize: '0.14rem'
@@ -59,7 +59,7 @@ cvp.init({
 
 ### API
 
-#### cvp
+#### vp
 
 |키|타입|설명|
 |----|----|----|
@@ -84,7 +84,7 @@ interface StoreOptions {
     rootSize: string;
   };
 }
-const cvp: {
+const vp: {
   init(options: Options): void;
   readonly info: StoreOptions;
 }
@@ -116,4 +116,4 @@ docInfo:
 
 * rootSize: 문자열, 루트의 글꼴 크기 반환
 
-options: 객체, 이 페이지의 "cvp" 옵션 반환
+options: 객체, 이 페이지의 "vp" 옵션 반환

@@ -7,7 +7,7 @@
     const store = {
         docInfo: {}
     };
-    function init(options) {
+    function init(options = {}) {
         if (!window) {
             console.warn('viewport startup time is incorrect.');
             return;

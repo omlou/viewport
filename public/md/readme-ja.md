@@ -25,7 +25,7 @@
 <!-- ローカルにダウンロードして使用することをお勧めします -->
 <script>
   /* このJSファイルを含めると、viewportオブジェクトがwindowで利用可能になります */
-  cvp.init({/* オプション */})
+  vp.init({/* オプション */})
 </script>
 ```
 
@@ -41,16 +41,16 @@ main.jsまたはmain.tsで
 
 ```javascript
 /* パッケージ全体を使用する */
-import cvp from '@xlou/viewport'
+import vp from '@xlou/viewport'
 
-/* モバイルでのおすすめ設定（デザインドラフトは375pxで、750pxは同じ） */
-cvp.init({
-  width: 375,
+/* モバイルでのおすすめ設定 */
+vp.init({
+  width: 375, // ここではデザインの下書きは375pxですが、750pxの場合、750に設定してください
   fontSize: '0.14rem'
 })
 
 /* PCでのおすすめ設定（デザインドラフトは1920px）  */
-cvp.init({
+vp.init({
   width: 1920,
   metaViewport: false,
   fontSize: '0.14rem'
@@ -59,7 +59,7 @@ cvp.init({
 
 ### API
 
-#### cvp
+#### vp
 
 |キー|型|説明|
 |----|----|----|
@@ -84,7 +84,7 @@ interface StoreOptions {
     rootSize: string;
   };
 }
-const cvp: {
+const vp: {
   init(options: Options): void;
   readonly info: StoreOptions;
 }
@@ -116,4 +116,4 @@ docInfo:
 
 * rootSize: 文字列、ルートのフォントサイズを返します
 
-options: オブジェクト、このページの"cvp"のオプションを返します
+options: オブジェクト、このページの"vp"のオプションを返します
