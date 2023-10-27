@@ -23,7 +23,6 @@ const serve = function() {
   }))
 }
 
-
 async function upgrade() {
   const options = minimist(process.argv.slice(2), { string: 'host', default: '' })
   const pkg = await fs.readJSON('package.json')
